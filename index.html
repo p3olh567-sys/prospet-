@@ -6,7 +6,6 @@
     <title>Mon Shop Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- PayPal -->
     <script src="https://www.paypal.com/sdk/js?client-id=ATDjFyQ0eQ5KZXBVWrd4fpPeOcTLIVCXzitw8Egt6u16RroY4TTCFCJLJ0jiFnR_r-Frj0hANHUbCLHi&currency=EUR&intent=capture"></script>
 
     <style>
@@ -36,15 +35,6 @@
 
         .page { display: none; }
         .page.active { display: block; }
-
-        .reveal {
-            animation: revealAnim 0.6s ease forwards;
-        }
-
-        @keyframes revealAnim {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 
@@ -53,41 +43,35 @@
 <!-- ================= PAGE 1 ================= -->
 <div id="page1" class="page active max-w-4xl mx-auto px-6 py-12">
 
-    <!-- titre du haut supprimé -->
-
-    <h2 class="text-5xl font-semibold title-font text-center mb-4 mt-20">
-        Tes identifiants<br>et ton produit
-    </h2>
-
-    <p class="text-center text-xl text-purple-200 mb-16">
-        Remplace les placeholders par tes vraies infos.
-    </p>
+    <!-- Nouveau titre en haut -->
+    <div class="flex items-center gap-3 mb-16">
+        <div class="w-9 h-9 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-xl">🚀</div>
+        <h1 class="title-font text-4xl font-semibold tracking-tighter">
+            Trouver des prosperts rapiement
+        </h1>
+    </div>
 
     <div class="grid md:grid-cols-3 gap-8">
 
         <div class="glass p-8 rounded-3xl">
             <p class="text-pink-400">TikTok</p>
             <p class="text-2xl">@argent.ligne</p>
-            <a href="https://www.tiktok.com/@argent.ligne" target="_blank"
-               class="block mt-4 bg-white text-black py-3 rounded-xl text-center">
-               Visiter
+            <a href="https://www.tiktok.com/@argent.ligne" target="_blank" class="block mt-4 bg-white text-black py-3 rounded-xl text-center">
+                Visiter
             </a>
         </div>
 
         <div class="glass p-8 rounded-3xl">
             <p class="text-pink-400">Instagram</p>
             <p class="text-2xl">@paolo.49k</p>
-            <a href="https://www.instagram.com/paolo.49k/" target="_blank"
-               class="block mt-4 bg-white text-black py-3 rounded-xl text-center">
-               Visiter
+            <a href="https://www.instagram.com/paolo.49k/" target="_blank" class="block mt-4 bg-white text-black py-3 rounded-xl text-center">
+                Visiter
             </a>
         </div>
 
         <div class="glass p-8 rounded-3xl">
             <p class="text-emerald-400">Produit</p>
-            <a id="product-link-page1"
-               href="URL_DU_PRODUIT_QUE_TU_METTRAS_ICI"
-               target="_blank"
+            <a id="product-link-page1" href="URL_DU_PRODUIT_QUE_TU_METTRAS_ICI" target="_blank"
                class="block mt-4 bg-emerald-400 text-black py-3 rounded-xl text-center">
                Accéder au produit
             </a>
@@ -96,17 +80,9 @@
     </div>
 
     <div class="mt-16 text-center">
-        <button onclick="goToPage(2)"
-                class="bg-white text-black px-10 py-6 rounded-2xl text-xl">
+        <button onclick="goToPage(2)" class="bg-white text-black px-10 py-6 rounded-2xl text-xl">
             Passez à la page suivante →
         </button>
-    </div>
-
-    <!-- nouveau titre en bas -->
-    <div class="mt-20 text-center">
-        <h1 class="title-font text-4xl font-semibold tracking-tight">
-            Trouver des prosperts rapiement
-        </h1>
     </div>
 
 </div>
