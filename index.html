@@ -43,7 +43,6 @@
 <!-- ================= PAGE 1 ================= -->
 <div id="page1" class="page active max-w-4xl mx-auto px-6 py-12">
 
-    <!-- Nouveau titre en haut -->
     <div class="flex items-center gap-3 mb-16">
         <div class="w-9 h-9 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-xl">🚀</div>
         <h1 class="title-font text-4xl font-semibold tracking-tighter">
@@ -119,6 +118,29 @@
 
 </div>
 
+<!-- ================= PAGE 3 ================= -->
+<div id="page3" class="page max-w-5xl mx-auto px-6 py-12">
+
+    <a onclick="goToPage(2)" class="cursor-pointer text-purple-300 mb-6 inline-block">
+        ← Retour
+    </a>
+
+    <h1 class="text-5xl font-semibold mb-10">
+        📚 Contenu débloqué
+    </h1>
+
+    <div class="space-y-12">
+
+        <!-- 🔥 MET TES IMAGES ICI -->
+        <img src="ChatGPT Image 3 avr. 2026, 18_49_03.png" class="w-full rounded-3xl shadow-2xl">
+        <img src="Techniques avancées pour trouver des clients.png" class="w-full rounded-3xl shadow-2xl">
+        <img src="Stratégie pour transformer les prospects.png" class="w-full rounded-3xl shadow-2xl">
+        <img src="Publier et vendre ton ebook rapidement.png" class="w-full rounded-3xl shadow-2xl">
+
+    </div>
+
+</div>
+
 <script>
 function goToPage(page) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -148,6 +170,9 @@ paypal.Buttons({
     onApprove: function(data, actions) {
         return actions.order.capture().then(function(details) {
             alert('Paiement réussi ! Merci ' + details.payer.name.given_name + ' 🎉');
+
+            // 👉 REDIRECTION PAGE 3
+            goToPage(3);
         });
     },
 
