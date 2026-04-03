@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Shop Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ✅ PayPal FIX -->
+    <script src="https://www.paypal.com/sdk/js?client-id=ATDjFyQ0eQ5KZXBVWrd4fpPeOcTLIVCXzitw8Egt6u16RroY4TTCFCJLJ0jiFnR_r-Frj0hANHUbCLHi&currency=EUR&intent=capture"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
 
@@ -25,12 +29,8 @@
         .floating-img {
             animation: float 4s ease-in-out infinite;
         }
-        .page {
-            display: none;
-        }
-        .page.active {
-            display: block;
-        }
+        .page { display: none; }
+        .page.active { display: block; }
         .reveal {
             animation: revealAnim 0.6s ease forwards;
         }
@@ -40,226 +40,134 @@
         }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-zinc-950 via-purple-950 to-black text-white min-h-screen">
 
-    <!-- ====================== PAGE 1 : Configuration ====================== -->
-    <div id="page1" class="page active max-w-4xl mx-auto px-6 py-12">
-        <!-- Header -->
-        <div class="flex justify-between items-center mb-16">
-            <div class="flex items-center gap-3">
-                <div class="w-9 h-9 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-xl">🚀</div>
-                <h1 class="title-font text-4xl font-semibold tracking-tighter">Mon Shop Digital</h1>
-            </div>
-            <div class="text-sm text-purple-300 font-medium">Étape 1 / 2 • Configuration</div>
+<!-- ================= PAGE 1 ================= -->
+<div id="page1" class="page active max-w-4xl mx-auto px-6 py-12">
+
+    <div class="flex justify-between items-center mb-16">
+        <div class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center text-xl">🚀</div>
+            <h1 class="title-font text-4xl font-semibold tracking-tighter">Mon Shop Digital</h1>
         </div>
-
-        <h2 class="text-5xl font-semibold title-font tracking-tighter text-center mb-4">
-            Tes identifiants<br>et ton produit
-        </h2>
-        <p class="text-center text-xl text-purple-200 max-w-md mx-auto mb-16">
-            Remplace les placeholders par tes vraies infos.<br>
-            La page suivante utilisera tout ça automatiquement.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- TikTok Card -->
-            <div class="glass border border-white/10 rounded-3xl p-8 hover:border-pink-500 transition-all group">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="text-5xl">♬</div>
-                    <div>
-                        <p class="text-pink-400 font-semibold text-lg">TikTok</p>
-                        <p class="text-2xl title-font">@argent.ligne</p>
-                    </div>
-                </div>
-                <a href="https://www.tiktok.com/@argent.ligne" target="_blank"
-                   class="block text-center bg-white text-black font-semibold py-4 px-8 rounded-2xl hover:scale-105 transition-all flex items-center justify-center gap-2">
-                    <span>Visiter mon TikTok</span>
-                    <span class="text-xl">→</span>
-                </a>
-                <p class="text-xs text-center mt-4 text-zinc-400">Remplace par ton vrai @ TikTok</p>
-            </div>
-
-            <!-- Instagram Card -->
-            <div class="glass border border-white/10 rounded-3xl p-8 hover:border-pink-500 transition-all group">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="text-5xl">📸</div>
-                    <div>
-                        <p class="text-pink-400 font-semibold text-lg">Instagram</p>
-                        <p class="text-2xl title-font">@paolo.49k</p>
-                    </div>
-                </div>
-                <a href="https://www.instagram.com/paolo.49k/" target="_blank"
-                   class="block text-center bg-white text-black font-semibold py-4 px-8 rounded-2xl hover:scale-105 transition-all flex items-center justify-center gap-2">
-                    <span>Visiter mon Instagram</span>
-                    <span class="text-xl">→</span>
-                </a>
-                <p class="text-xs text-center mt-4 text-zinc-400">Remplace par ton vrai @ Instagram</p>
-            </div>
-
-            <!-- Produit Digital Card -->
-            <div class="glass border border-white/10 rounded-3xl p-8 hover:border-emerald-400 transition-all group">
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="text-5xl">💎</div>
-                    <div>
-                        <p class="text-emerald-400 font-semibold text-lg">Produit Digital</p>
-                        <p class="text-2xl title-font">Ton lien direct</p>
-                    </div>
-                </div>
-                <a id="product-link-page1" href="URL_DU_PRODUIT_QUE_TU_METTRAS_ICI" target="_blank"
-                   class="block text-center bg-emerald-400 hover:bg-emerald-300 text-black font-semibold py-4 px-8 rounded-2xl hover:scale-105 transition-all flex items-center justify-center gap-2">
-                    <span class="text-xl">📥</span>
-                    <span>Accéder au produit</span>
-                </a>
-                <p class="text-xs text-center mt-4 text-zinc-400">Remplace par le vrai lien de ton produit</p>
-            </div>
-        </div>
-
-        <!-- Bouton vers la page 2 -->
-        <div class="mt-16 flex justify-center">
-            <button onclick="goToPage(2)"
-                    class="group relative inline-flex items-center gap-4 bg-white text-black font-semibold text-2xl px-12 py-8 rounded-3xl hover:scale-110 transition-all shadow-2xl shadow-purple-500/50">
-                <span>Passez à la page suivante →</span>
-                <div class="w-6 h-6 bg-black text-white rounded-2xl flex items-center justify-center text-xl group-active:rotate-45 transition">💸</div>
-            </button>
-        </div>
-
-        <p class="text-center text-zinc-500 text-sm mt-12">
-            Tout est maintenant dans un seul fichier <strong>index.html</strong><br>
-            Plus besoin de vente.html séparé !
-        </p>
+        <div class="text-sm text-purple-300 font-medium">Étape 1 / 2 • Configuration</div>
     </div>
 
-    <!-- ====================== PAGE 2 : Page de Vente ====================== -->
-    <div id="page2" class="page max-w-5xl mx-auto px-6 py-12">
-        <a onclick="goToPage(1)" class="inline-flex items-center gap-2 text-purple-300 hover:text-white mb-8 transition cursor-pointer">
-            ← Retour à la configuration
-        </a>
+    <h2 class="text-5xl font-semibold title-font text-center mb-4">
+        Tes identifiants<br>et ton produit
+    </h2>
 
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <!-- Image & Visuel -->
-            <div class="flex justify-center">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-br from-pink-500 via-purple-600 to-emerald-500 blur-3xl opacity-30 rounded-3xl"></div>
-                    <img src="https://picsum.photos/id/1015/800/1000"
-                         alt="Ebook Trouver des clients avec Google"
-                         class="floating-img w-full max-w-md rounded-3xl shadow-2xl border border-white/20 relative z-10">
-                    <div class="absolute -top-6 -right-6 bg-emerald-400 text-black font-bold text-sm px-8 py-3 rounded-2xl shadow-xl flex items-center gap-3 animate-pulse">
-                        <span class="relative flex h-3 w-3">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                        </span>
-                        ACCÈS INSTANTANÉ
-                    </div>
-                </div>
-            </div>
+    <p class="text-center text-xl text-purple-200 mb-16">
+        Remplace les placeholders par tes vraies infos.
+    </p>
 
-            <!-- Contenu de vente -->
-            <div>
-                <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-3xl text-sm mb-6">
-                    📘 EBOOK DIGITAL • PDF
-                </div>
-                <h1 class="title-font text-6xl font-semibold tracking-tighter leading-none mb-4">
-                    Trouver des clients rapidement<br>grâce à Google
-                </h1>
-                <p class="text-3xl text-emerald-400 font-semibold mb-2">
-                    Méthode stratégique et légale avec les Google Dorks
-                </p>
-                <p class="text-2xl text-purple-200 mb-10">50€ • Accès immédiat après paiement</p>
+    <div class="grid md:grid-cols-3 gap-8">
 
-                <!-- Teaser -->
-                <div class="glass border border-white/10 rounded-3xl p-8 mb-10">
-                    <p class="text-xl leading-relaxed text-purple-100">
-                        Arrête de perdre du temps sur les réseaux sociaux.<br>
-                        <span class="font-semibold text-white">Va directement chercher tes clients</span> là où ils laissent leurs informations publiquement.
-                    </p>
-                </div>
-
-                <!-- Bénéfices -->
-                <div class="mb-12">
-                    <h3 class="text-2xl title-font font-semibold mb-6 flex items-center gap-3">
-                        <span class="text-emerald-400">✦</span> Ce que tu vas recevoir
-                    </h3>
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="text-3xl">🔍</div>
-                            <div>
-                                <p class="font-semibold">Les meilleures Google Dorks pour trouver prospects, emails et contacts</p>
-                                <p class="text-purple-200 text-sm">Des dizaines de requêtes prêtes à l’emploi</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="text-3xl">⚡</div>
-                            <div>
-                                <p class="font-semibold">Méthode rapide et sans budget pub</p>
-                                <p class="text-purple-200 text-sm">Trouve des dizaines de leads en quelques minutes</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="text-3xl">🧠</div>
-                            <div>
-                                <p class="font-semibold">Mindset + Stratégie complète</p>
-                                <p class="text-purple-200 text-sm">Pas seulement des commandes techniques : comment transformer ces infos en clients payants</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Prix & Paiement PayPal -->
-                <div class="glass border border-emerald-400/30 rounded-3xl p-10 text-center">
-                    <p class="text-zinc-400 mb-2">Prix unique – Accès à vie</p>
-                    <p class="text-7xl font-bold title-font tracking-tighter mb-8">50<span class="text-4xl align-super text-emerald-400">€</span></p>
-
-                    <!-- PayPal Smart Buttons -->
-                    <div id="paypal-button-container" class="min-h-[50px]"></div>
-
-                    <p class="text-xs text-zinc-500 mt-8">
-                        Paiement sécurisé • Accès immédiat après validation<br>
-                        Garantie satisfaction 7 jours
-                    </p>
-                </div>
-            </div>
+        <div class="glass p-8 rounded-3xl">
+            <p class="text-pink-400">TikTok</p>
+            <p class="text-2xl">@argent.ligne</p>
+            <a href="https://www.tiktok.com/@argent.ligne" target="_blank" class="block mt-4 bg-white text-black py-3 rounded-xl text-center">Visiter</a>
         </div>
+
+        <div class="glass p-8 rounded-3xl">
+            <p class="text-pink-400">Instagram</p>
+            <p class="text-2xl">@paolo.49k</p>
+            <a href="https://www.instagram.com/paolo.49k/" target="_blank" class="block mt-4 bg-white text-black py-3 rounded-xl text-center">Visiter</a>
+        </div>
+
+        <div class="glass p-8 rounded-3xl">
+            <p class="text-emerald-400">Produit</p>
+            <a id="product-link-page1" href="URL_DU_PRODUIT_QUE_TU_METTRAS_ICI" target="_blank"
+               class="block mt-4 bg-emerald-400 text-black py-3 rounded-xl text-center">
+               Accéder au produit
+            </a>
+        </div>
+
     </div>
 
-    <!-- Script PayPal -->
-    <script src="https://www.paypal.com/sdk/js?client-id=TON_CLIENT_ID_PAYPAL&currency=EUR"></script>
-    <script>
-        // Navigation entre les pages
-        function goToPage(page) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById(`page${page}`).classList.add('active');
-        }
+    <div class="mt-16 text-center">
+        <button onclick="goToPage(2)" class="bg-white text-black px-10 py-6 rounded-2xl text-xl">
+            Passez à la page suivante →
+        </button>
+    </div>
 
-        // Initialisation PayPal (à remplacer par ton vrai Client ID)
-        paypal.Buttons({
-            style: {
-                layout: 'vertical',
-                color: 'gold',
-                shape: 'rect',
-                label: 'paypal'
-            },
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: '50.00',
-                            currency_code: 'EUR'
-                        },
-                        description: "Ebook - Trouver des clients rapidement grâce à Google"
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    alert('Paiement réussi ! Merci ' + details.payer.name.given_name + ' 🎉\n\nTu vas recevoir l\'ebook par email ou sur cette page dans quelques instants.');
-                    // Tu peux ajouter ici : window.location.href = "lien-telechargement.pdf";
-                });
-            },
-            onError: function(err) {
-                console.error(err);
-                alert("Une erreur est survenue lors du paiement. Réessaie ou contacte-moi.");
-            }
-        }).render('#paypal-button-container');
-    </script>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div id="page2" class="page max-w-5xl mx-auto px-6 py-12">
+
+    <a onclick="goToPage(1)" class="cursor-pointer text-purple-300 mb-6 inline-block">
+        ← Retour
+    </a>
+
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+        <div>
+            <img src="https://picsum.photos/id/1015/800/1000"
+                 class="floating-img rounded-3xl shadow-2xl">
+        </div>
+
+        <div>
+            <h1 class="text-5xl font-semibold mb-4">
+                Trouver des clients rapidement grâce à Google
+            </h1>
+
+            <p class="text-2xl text-emerald-400 mb-2">
+                Méthode stratégique avec Google Dorks
+            </p>
+
+            <p class="text-xl mb-8">50€ • Accès immédiat</p>
+
+            <!-- PAYPAL -->
+            <div id="paypal-button-container"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function goToPage(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById("page" + page).classList.add('active');
+}
+
+paypal.Buttons({
+
+    style: {
+        layout: 'vertical',
+        color: 'gold',
+        shape: 'rect',
+        label: 'paypal'
+    },
+
+    createOrder: function(data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: '50.00',
+                    currency_code: 'EUR'
+                },
+                description: "Ebook - Trouver des clients rapidement grâce à Google"
+            }]
+        });
+    },
+
+    onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            alert('Paiement réussi ! Merci ' + details.payer.name.given_name + ' 🎉');
+        });
+    },
+
+    onError: function(err) {
+        console.error(err);
+        alert("Une erreur est survenue.");
+    }
+
+}).render('#paypal-button-container');
+</script>
+
 </body>
 </html>
